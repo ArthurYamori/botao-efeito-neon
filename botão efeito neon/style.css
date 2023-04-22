@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+
+.botão {
+  text-align: center;
+}
+:root {
+    --cor-azul: #3BF1F4;
+    --cor-preto: #000000;
+  }
+  .title{ text-align: center;}
+  .title { color: var(--cor-azul);}
+  .texto { color: var(--cor-preto);}
+
+  :root {
+    --cor-azul: #3BF1F4;
+    --cor-hover: #ffffff;
+  }
+  .btn {
+    padding:0.2em 1em;
+    border-radius:50px;
+    display:inline-block;
+  }
+  .btn-neon {
+    border:4px solid var(--cor-azul);
+    position: relative;
+    text-transform: capitalize;
+    text-decoration:none;
+    color: var(--cor-azul);
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 2em;
+    font-family: 'open_sansregular';
+    transition:0.4s;
+    text-shadow: 0 0 0.125em rgba(0, 0, 0, 0.5), 0 0 0.25em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--cor-azul), 0 0 0.5em 0 var(--cor-azul);
+  }
+  .btn-neon:hover {
+    color: var(--cor-hover);
+    border:4px solid var(--cor-hover);
+    transition:0.4s;
+    text-shadow: none;
+  }
+  .btn-neon:hover:after {
+    opacity: 1;
+  }
+  .btn-neon:hover:before {
+    opacity: 1;
+  }
+  .btn-neon:before, .btn-neon:after {
+    content: "";
+    position: absolute;
+    transition: opacity 100ms linear;
+    background-color: var(--cor-azul);
+  }
+  .btn-neon:before {
+    top: 120%;
+    left: auto;
+    width: auto;
+    height: auto;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.5;
+  }
+  .btn-neon:after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    box-shadow: 0 0 0.75em 0.25em var(--cor-azul), 0 0 0.75em 1em var(--cor-azul);
+    opacity: 0;
+  }
